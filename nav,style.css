@@ -1,0 +1,27 @@
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: center; 
+    gap: 20px; 
+    background-color: gray; 
+    padding: 20px;
+    border-radius: 30px;
+    width: 500px; 
+    margin: 0 auto;
+}
+  
+li {
+    background-color:  khaki; 
+    padding: 10px 20px; 
+    border-radius: 30px; 
+    color: navy;
+    font-size: 20px;
+    text-align: center; 
+}
+  
