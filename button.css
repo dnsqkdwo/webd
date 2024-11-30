@@ -1,0 +1,127 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+}
+.wrap {
+    width: 1200px;
+}
+
+.header {
+    width: 800px;
+    height: 80px;
+    background-color: #949494;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.q {
+    width: 150px;
+    height: 50px;
+    background-color: blanchedalmond;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 3px 3px 3px black; 
+}
+
+.w {
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(45deg , rgb(255, 0, 0) , blue);
+    background-size: 400% 400%;
+    animation: colorChage 3s ease infinite;
+
+    box-shadow: 3px 3px 3px black;
+
+    transition-duration: 0.2s;
+}
+
+@keyframes colorChage {
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+
+.e {
+    width: 150px;
+    height: 50px;
+    background-color: #de0814;
+    border-radius: 10px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 3PX 3px 3px black;
+}
+
+.img {
+    width: 50px;
+    height: 47px;
+}
+
+.r {
+    width: 150px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 10px;
+    border-width: medium;
+    
+    box-shadow: 3px 3px 3px black;
+
+    border: 3px solid white 
+}
+
+.q:hover {
+    opacity: 0.9;
+    transition: 0.3s;
+    background-color: rgb(220, 193, 152);
+}
+
+.q:active {
+    box-shadow: none;
+}
+
+.w:hover {
+    opacity: 0.6;
+    transition: 0.2s;
+    background: linear-gradient(-90deg, #569be4, #c15ee2, #64b1ef);
+}
+
+.w:active {
+    box-shadow: none;
+}
+
+.e:hover {
+    opacity: 0.9;
+    transition: 0.3s;
+}
+
+.e:active {
+    box-shadow: none;
+}
+
+.r:hover {
+    opacity: 0.9;
+    transition: 0.3s;
+    background-color: #615e5e;
+}
+
+.r:active {
+    box-shadow: none;
+}
+
+
+
+
+
+
+
