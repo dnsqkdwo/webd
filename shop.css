@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.wrap {
+    width: 1000px;
+    margin: 0px auto;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+header {
+    width: 100%;
+    height: 100px;
+    background: blue;
+    color: aliceblue;
+    text-align: center;
+    line-height: 100px;
+}
+
+nav {
+    width: 100%;
+    height: 50px;
+    background: #65F;
+    color: aliceblue;
+    line-height: 50px;
+}
+
+nav > a {
+    padding-left: 35px;
+}
+
+section {
+    width: 100%;
+    height: 400px;
+    background: white;
+    color: black;
+}
+
+footer {
+    width: 100%;
+    height: 50px;
+    background: blue;
+    color: aliceblue;
+    text-align: center;
+    line-height: 50px;
+}
+
+section > h2 {
+    text-align: center;
+    padding: 20px;
+}
