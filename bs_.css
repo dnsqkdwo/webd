@@ -1,0 +1,70 @@
+/* 브라우저 마진과 패딩 리셋 */
+* {
+    margin: 0; /* 모든 요소의 기본 margin을 0으로 리셋 */
+    padding: 0; /* 모든 요소의 기본 padding을 0으로 리셋 */
+}
+
+/* 슬라이드 영역 - max-width 크기를 조절해주면 됩니다 */
+.slidewrap {
+    width: 1200px; /* 슬라이드 영역의 고정된 너비 */
+    margin: 0 auto; /* 슬라이드 영역을 수평으로 가운데 정렬 */
+    overflow: hidden; /* 슬라이드 영역 밖으로 나가는 부분은 숨김 처리 */
+}
+
+/* 슬라이드 목록 */
+.slidelist {
+    white-space: nowrap; /* li 요소들이 한 줄에 나란히 배치되도록 함 */
+    font-size: 0; /* li 사이의 공백 제거 (이미지 사이에 불필요한 공백이 생기지 않게 하기 위함) */
+}
+
+/* 각 슬라이드를 구성하는 li 요소 */
+.slidelist > li {
+    display: inline-block; /* li 요소들을 한 줄에 나열, 블록처럼 크기 조정 가능 */
+    transition: all .5s; /* 슬라이드 애니메이션을 0.5초 동안 부드럽게 전환 */
+}
+
+/* 슬라이드 이미지 */
+.slidelist > li > a img {
+    width: 100%; /* 이미지를 슬라이드 영역에 맞게 크기를 조정 */
+    height: 100%;
+}
+
+/* 좌우로 넘기는 LABEL 버튼에 대한 스타일 */
+.slidelist label {
+    position: absolute; /* 버튼을 절대 위치로 배치 */
+    z-index: 10; /* 버튼을 슬라이드 위에 표시 */
+    top: 50%; /* 버튼을 세로 중앙에 배치 */
+    transform: translateY(-50%); /* 세로 중앙에 정확히 맞추기 위해 Y축으로 -50% 이동 */
+    padding: 100px; /* 버튼에 충분한 클릭 영역을 제공 */
+    cursor: pointer; /* 마우스 커서가 버튼 위에 올 때 손 모양 커서로 변경 */
+}
+
+/* 왼쪽 슬라이드 버튼 */
+.left {
+    left: 30px; /* 왼쪽 버튼을 슬라이드 영역의 왼쪽에 위치시킴 */
+    background: url('left.png') center / 100% no-repeat; /* 버튼 배경으로 왼쪽 화살표 이미지 사용 */
+}
+
+/* 오른쪽 슬라이드 버튼 */
+.right {
+    right: 30px; /* 오른쪽 버튼을 슬라이드 영역의 오른쪽에 위치시킴 */
+    background: url('right.png') center / 100% no-repeat; /* 버튼 배경으로 오른쪽 화살표 이미지 사용 */
+}
+
+/* INPUT 체크되면 변화값이 li까지 전달되는 스타일 */
+input[id="slide01"]:checked ~ .slidewrap .slidelist > li {
+    transform: translateX(0%); /* 첫 번째 라디오 버튼이 선택되면 첫 번째 슬라이드를 0% 위치로 이동 */
+}
+
+input[id="slide02"]:checked ~ .slidewrap .slidelist > li {
+    transform: translateX(-100%); /* 두 번째 라디오 버튼이 선택되면 두 번째 슬라이드를 왼쪽으로 100% 이동 */
+}
+
+input[id="slide03"]:checked ~ .slidewrap .slidelist > li {
+    transform: translateX(-200%); /* 세 번째 라디오 버튼이 선택되면 세 번째 슬라이드를 왼쪽으로 200% 이동 */
+}
+
+/* 라디오 버튼 숨기기 */
+input[type="radio"] {
+    display: none; /* 라디오 버튼 자체는 화면에 보이지 않게 처리 */
+}
