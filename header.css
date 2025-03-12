@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#wrap {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.header {
+    width: 100%;
+    height: 100px;
+    display: flex;
+}
+
+.logo {
+    width: 10%;
+    height: 100%;
+    background-color: #5dade2;
+}
+
+.nav {
+    width: 90%;
+    height: 100%;
+    background-color: #f2f4f4;
+    position: relative;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color:  black;
+}
+
+.menu > li > a {
+    font-size: 20px;
+}
+
+.menu {
+    width: 60%;
+    margin: 150px auto;
+    position: absolute;
+    top: -150px;
+    z-index: 10;
+    overflow: hidden;
+}
+
+.submenu {
+    height: 0;
+}
+
+.menu > li {
+    width: 25%;
+    float: left;
+    text-align: center;
+    line-height: 100px;
+}
+
+.submenu > li {
+    line-height: 50px;
+}
+
+.menu > li:hover .submenu {
+    width: 100%;
+    height: 250px;
+    transition: 0.7s;
+} 
+
+.menu:hover {
+    background-color: #eeecec;
+}
+
+.submenu > li:hover {
+    background-color: #ffffff;
+}
+
+button {
+    float: right;
+    position: relative;
+}
+
+.log {
+    position: relative;
+}
+
+.login {
+    width: 80px;
+    height: 30px;
+    border: none;
+    background-color: #83bade;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 35px;
+    margin-right: 250px;
+    font-size: 15px;
+}
+
+.login:hover {
+    background-color: #a5d6f9;
+    transition: 0.2s;
+}
+
+.management {
+    width: 80px;
+    height: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 35px;
+    margin-right: 20px;
+    border: 2px solid black 
+}
+
+.management:hover {
+    transition: 0.1s;
+    background-color: #c5c5c557;
+}
+
+.shopcart {
+    width: 80px;
+    height: 30px;
+    border: none;
+    background-color: #83bade;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 35px;
+    margin-right: 20px;
+    font-size: 15px;
+     
+}
+
+.shopcart:hover {
+    background-color: #a5d6f9;
+    transition: 0.2s;
+}
+
+.Partnerships {
+    width: 80px;
+    height: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    font-size: 15px;
+    margin-top: 35px;
+    margin-right: 20px;
+    cursor: pointer;
+    border: 2px solid black
+}
+
+.Partnerships:hover {
+    transition: 0.1s;
+    background-color: #c5c5c557;
+    
+}
+
+.box {
+    width: 100%;
+    height: 0;
+    background-color: #eeecec;
+}
+
+
+
