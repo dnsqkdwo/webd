@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul, li {
+    list-style: none;
+}
+
+[name="slide"] {
+    display: none;
+}
+
+.visualimg {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.visualimg img {
+    width: 100%;
+}
+
+.visualimg .slidelist {
+    white-space: nowrap;
+    font-size: 0;
+    overflow: hidden;
+}
+
+.visualimg .listitem {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    transition: all .35s;
+}
+
+.visualimg .listitem label {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+label.left {
+    left: 20px;
+    background-color: #fff;
+}
+
+label.right {
+    right: 20px;
+    background-color: #fff;
+}
+[id="slide01"]:checked ~ .slidelist .listitem { transform: translateX(0); animation:slide01 9s infinite linear;}
+[id="slide02"]:checked ~ .slidelist .listitem { transform: translateX(-100%); animation:slide02 9s infinite linear;}
+[id="slide03"]:checked ~ .slidelist .listitem { transform: translateX(-200%); animation:slide03 9s infinite linear;}
+
+@keyframes slide01 {
+    0% {
+        left: 0;
+    }
+
+    31% {
+        left: 0;
+    }
+
+    33% {
+        left: -100%;
+    }
+
+    63% {
+        left: -100%;
+    }
+
+    66% {
+        left: -200%;
+    }
+
+    97% {
+        left: -200%;
+    }
+
+    100% {
+        left: 0;
+    }
+}
+
+@keyframes slide02 {
+    0% {
+        left: 0;
+    }
+
+    31% {
+        left: 0;
+    }
+
+    33% {
+        left: -100%;
+    }
+
+    63% {
+        left: -100%;
+    }
+
+    66% {
+        left: 100%;
+    }
+
+    97% {
+        left: 100%;
+    }
+
+    100% {
+        left: 0;
+    }
+}
+
+@keyframes slide03 {
+    0% {
+        left: 0;
+    }
+
+    31% {
+        left: 0;
+    }
+
+    33% {
+        left: 200%;
+    }
+
+    63% {
+        left: 200%;
+    }
+
+    66% {
+        left: 100%;
+    }
+
+    97% {
+        left: 100%;
+    }
+
+    100% {
+        left: 0;
+    }
+}
+
+.visualimg > .slidelist:hover .listitem {
+    animation-play-state: paused;
+}
+
+
+
+
