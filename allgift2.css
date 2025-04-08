@@ -1,0 +1,890 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.wrap {
+    width: 100%;
+    margin: 0 auto;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.header {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    position: fixed;
+    z-index: 50;
+    top: 0;
+    left: 0;
+    border-bottom: solid 2px #ddd;
+}
+
+.logo {
+    width: 10%;
+    height: 100%;
+    background-color: #000;
+}
+
+
+.nav {
+    width: 50%;
+    height: 100%;
+    position: relative;
+    background-color: #fff;
+}
+
+.utill {
+    width: 40%;
+    height: 100%;
+    position: relative;
+    background-color: #fff;
+}
+
+.menu {
+    width: 100%;
+    z-index: 10;
+    overflow: hidden;
+    position: relative;
+}
+
+.sub-menu {
+    max-height: 0;  
+    transition: max-height 0.5s ease-out,
+    opacity 0.3s ease-out; 
+}
+
+.menu > li {
+    width: 25%;
+    float: left;
+    line-height: 100px;
+    text-align: center;
+    position: relative;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.nav a {
+    color: #000;
+}
+
+.menu > li:hover .sub-menu {
+    max-height: 500px;
+}
+
+.sub-menu a {
+    display: block;
+    background-color: #fff;
+}
+
+.sub-menu a:hover {
+    background-color: #45171e;
+    color: #fff;
+    transition: 0.4s;
+}
+
+.underline::after {
+    margin-bottom: -3px;
+    display: flex;
+    content: '';
+    border-bottom: solid 2px #2c030a;  
+    transform: scaleX(0);  
+    transition: transform 250ms ease-in-out;
+}
+
+.underline:hover:after { transform: scaleX(1); }
+
+.login {
+    width: 80px;
+    height: 30px;
+    border-radius: 10px;
+    font-weight: 600;
+    background-color: #fff;
+    position: absolute;
+    top: 35%;
+    margin-left: 80px;
+    cursor: pointer;
+}
+
+.login:active {
+    background-color: #d6d5d5;
+}
+
+.signup {
+    width: 80px;
+    height: 30px;
+    border-radius: 10px;
+    font-weight: 600;
+    background-color: #fff;
+    position: absolute;
+    top: 35%; 
+    margin-left: 170px;
+    cursor: pointer;
+}
+
+.signup:active {
+    background-color: #d6d5d5;
+}
+
+.management {
+    position: absolute;
+    top: 38%;
+    right: 29%;
+}
+
+.shopbox {
+    position: absolute;
+    top: 38%;
+    right: 17%;
+}
+
+.utill > a:hover {
+    opacity: 0.5;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+/* 메뉴 영역 */
+
+.content {
+    width: 100%;
+    height: 3500px;
+}
+
+.category {
+    width: 100%;
+    height: 80%;
+    position: relative;
+    margin: 0 auto;
+    padding-top: 5%;
+}   
+
+.category-title {
+    padding-top: 10%;
+    text-align: center;
+    font-size: 30px;
+    color: #45171e;
+}
+
+.subpage-tag {
+    padding-left: 70%;
+    padding-top: 5%;
+    padding-bottom: 1%;
+}
+
+.subpage-tag a {
+    padding: 10px;
+    opacity: 0.5;
+}
+
+.subpage-tag a:hover {
+    opacity: 1;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.healthfood {
+    width: 100%;
+    height: 20%;
+    position: relative;
+}
+
+.healthfood-font {
+    width: 10%;
+    line-height: 50px;
+    color: #45171e;
+    font-size: 25px
+}
+
+.vitamin {
+    width: 250px;
+    position: absolute;
+    top: 4%;
+    padding-left: 6%;
+    font-size: 13px;
+}
+
+.vitamin h3 {
+    font-size: 20px;
+}
+
+.vitamin .price-and-shipping {
+    line-height: 50px;
+}
+
+.vitamin .price-and-shipping > span {
+    color: red;
+}
+
+.docter {
+    width: 250px;
+    position: absolute;
+    padding-left: 25%;
+    top: 4%;
+    font-size: 13px;
+}
+
+.centroom {
+    width: 250px;
+    position: absolute;
+    top: 4%;
+    padding-left: 44%;
+    font-size: 13px;
+}
+
+.forman {
+    width: 250px;
+    position: absolute;
+    top: 4%;
+    padding-left: 63%;
+    font-size: 12px;
+}
+
+.forman .price-and-shipping {
+    line-height: 73px;
+}
+
+.nature {
+    width: 250px;
+    position: absolute;
+    top: 4%;
+    padding-left: 82%;
+    font-size: 12px;
+}
+
+.nature .price-and-shipping {
+    line-height: 55px;
+}
+
+/* 건강식품 */
+
+
+
+.digital {
+    width: 100%;
+    height: 20%;
+    position: relative;
+}
+
+.digital-font {
+    width: 10%;
+    line-height: 50px;
+    color: #45171e;
+    font-size: 25px
+}
+
+.mouse {
+    width: 250px;
+    position: absolute;
+    top: 4%;
+    padding-left: 6%;
+    font-size: 16px;
+}
+
+.mouse .price-and-shipping {
+    line-height: 70px;
+}
+
+
+.headset {
+    width: 250px;
+    position: absolute;
+    top: 4%;
+    padding-left: 25%;
+    font-size: 13px;
+}
+
+.headset h3 {
+    font-size: 19px;
+    line-height: 35px;
+}
+
+.headset .price-and-shipping {
+    line-height: 80px;
+}
+
+.battery {
+    width: 250px;
+    position: absolute;
+    top: 4%;
+    padding-left: 44%;
+    font-size: 14px;
+}
+
+.battery .price-and-shipping {
+    line-height: 67px;
+}
+
+
+.keybord {
+    width: 250px;
+    position: absolute;
+    top: 4%;
+    padding-left: 63%;
+    font-size: 14px;
+}
+
+.keybord .price-and-shipping {
+    line-height: 55px;    
+}
+
+.earphone2 {
+    width: 250px;
+    position: absolute;
+    top: 4%;
+    padding-left: 82%;
+    font-size: 14px;
+}
+
+.earphone2 .price-and-shipping {
+    line-height: 70px;
+}
+
+.earphone2 .Discount-Rewards {
+    padding-top: 15%;
+}
+
+.earphone2 span {
+    font-size: 17px;
+}
+
+
+.mouse h3 {
+    font-size: 16px;
+}
+
+.mouse p {
+    font-size: 13px;
+}
+
+.mouse span {
+    font-size: 16px;
+    padding-left: 5px;
+    color: red;
+}
+
+.mouse .Discount-Rewards {
+    padding-top: 8px;
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+.mouse .price-and-shipping {
+    padding-top: 7px;
+}
+
+/* 디지털 */
+
+
+.fancy {
+    width: 100%;
+    height: 20%;
+    position: relative;
+}
+
+.fancy-font {
+    line-height: 50px;
+    color: #45171e;
+    font-size: 25px
+}
+
+.earphone {
+    width: 250px;
+    position: absolute;
+    top: 4%;
+    padding-left: 6%;
+    font-size: 13px;
+} 
+
+.earphone span {
+    color: red;
+}
+
+.earphone .price-and-shipping {
+    line-height: 70px;
+}
+
+
+
+.umbrella {
+    width: 250px;
+    position: absolute;
+    top: 4%;
+    padding-left: 25%;
+    font-size: 14px;
+}
+
+.umbrella .price-and-shipping {
+    line-height: 65px;
+}
+
+
+
+.camera {
+    width: 250px;
+    position: absolute;
+    top: 4%;
+    padding-left: 44%;
+    font-size: 13px;
+}
+
+.camera .Discount-Rewards {
+    padding-top: 12px;
+}
+
+.camera span {
+    font-size: 18px;
+    padding-left: 10px;
+}
+
+.ring {
+    width: 250px;
+    position: absolute;
+    top: 4%;
+    padding-left: 63%;
+    font-size: 13px;
+} 
+
+.necklace {
+    width: 250px;
+    position: absolute;
+    top: 4%;
+    padding-left: 82%;
+    font-size: 13px;
+} 
+
+.ring span ,.necklace span {
+    font-size: 15px;
+}
+
+/* 펜시 */
+
+
+.perfume {
+    width: 100%;
+    height: 20%;
+    position: relative;
+}
+
+.perfume3 {
+    width: 250px;
+    position: absolute;
+    top: 4%;
+    padding-left: 6%;
+    font-size: 13px;
+}
+
+.perfume3 > a > p > span {
+    color: red;
+}
+
+.perfume-font {
+    width: 10%;
+    line-height: 50px;
+    color: #45171e;
+    font-size: 25px
+}
+
+.perfume2 {
+    width: 250px;
+    position: absolute;
+    top: 4%;
+    padding-left: 25%;
+    font-size: 13px;
+}
+
+
+
+.hotel {
+    width: 250px;
+    position: absolute;
+    top: 4%;
+    padding-left: 44%;
+    font-size: 14px;
+}
+
+.hotel > a > .price-and-shipping {
+    line-height: 45px;
+}
+
+.hotel > a > p > span {
+    padding-left: 10px;
+    font-size: 18px;
+}
+
+.perfume4 {
+    width: 250px;
+    position: absolute;
+    top: 4%;
+    padding-left: 63%;
+    font-size: 13px;
+}
+
+.perfume5 {
+    width: 250px;
+    position: absolute;
+    top: 4%;
+    padding-left: 82%;
+    font-size: 13px;
+}
+/* 향수 영역 */
+
+.haircare {
+    width: 100%;
+    height: 20%;
+    position: relative;
+}
+
+.haircare-font {
+    width: 10%;
+    line-height: 50px;
+    color: #45171e;
+    font-size: 25px
+}
+
+.haircare3 {
+    width: 250px;
+    position: absolute;
+    top: 4%;
+    padding-left: 6%;
+    font-size: 14px;
+}
+
+.haircare3 h3 {
+    font-size: 18px;
+}
+
+.haircare3 span {
+    color: red;
+}
+
+.haircare1 h3 {
+    font-size: 17px;
+}
+
+
+.haircare2 {
+    width: 250px;
+    position: absolute;
+    top: 4%;
+    padding-left: 25%;
+    font-size: 14px;
+}
+
+.haircare2 .price-and-shipping {
+    line-height: 50px;
+}
+
+.haircare1 {
+    width: 250px;
+    position: absolute;
+    top: 4%;
+    padding-left: 44%;
+    font-size: 14px;
+}
+
+.haircare4 {
+    width: 250px;
+    position: absolute;
+    top: 4%;
+    padding-left: 63%;
+    font-size: 14px;
+}
+
+.haircare5 {
+    width: 250px;
+    position: absolute;
+    top: 4%;
+    padding-left: 82%;
+    font-size: 14px;
+}
+
+.category img {
+    width: 250px;   
+    height: 170px;
+    border-radius: 15px;    
+    object-fit: cover;
+}
+
+a > h3 {
+    font-size: 20px;
+    line-height: 30px;
+}
+ 
+a > .Discount-Rewards {
+    padding-top: 10px;
+    font-size: 13px;
+    opacity: 0.7;
+}
+
+a > .price-and-shipping {
+    font-size: 10px;
+    line-height: 50px;
+} 
+
+a > p > span {
+    font-size: 20px;
+    padding-left: 14px;
+    color: #85b31c;
+}
+
+.category button {
+    width: 120px;
+    height: 35px;
+    border-radius: 10px;    
+    background-color: #D98324;
+    border-style: none;
+    color: #fff;
+}
+
+.category button:hover {
+    transition: 0.3s; 
+}
+
+.category .button1 {
+    background-color: #fff;
+    border: 2px solid #D98324;
+    color: #D98324;
+}
+
+/* 콘텐츠 */
+
+/* 주문하기 버튼 스타일 */
+/* 기본 모달 스타일 */
+.modal {
+    position: fixed;
+    z-index: 99999;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .modal-button {
+    margin-top: 20%;
+    width: 150px;
+    height: 50px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  /* 모달 내부 */
+  .modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 30px;
+    border-radius: 10px;
+    width: 500px;
+    height: 300px;
+    text-align: center;
+    position: relative;
+  }
+  
+  /* 닫기 버튼 */
+  .close {
+    position: absolute;
+    top: 10px; right: 20px;
+    font-size: 35px;
+    cursor: pointer;
+  }
+  
+  /* 구매 버튼 */
+  .buy-button {
+    background-color: #007bff;
+    color: white;
+    width: 150px;
+    height: 50px;
+    margin-top: 50px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* 비회원 주문 */
+  .guest-order {
+    margin-top: 60px;
+  }
+  
+  .guest-button {
+    margin-top: 10px;
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .a-box {
+    margin-top: 5%;
+  }
+
+  .a-box a {
+    display: inline-block;
+    padding: 10px;
+    opacity: 0.5;
+    transition: 0.2s;
+  }
+
+  .a-box a:hover {
+    transform: scale(1.20);
+    opacity: 1;
+  }
+  
+
+
+/* 비회원 주문하기 */
+
+.footer {
+    width: 100%;
+    height: 500px;
+    background-color: #c6c5c5;
+    position: relative;
+    margin-top: 10%;
+}
+
+.footer p {
+    font-size: 17px;
+    position: absolute;
+    top: 20%;
+    padding-top: 10px;
+    padding-left: 10%;
+    opacity: 0.7;
+}
+
+.footer span {
+    font-size: 17px;
+    position: absolute;
+    top: 25%;
+    padding-top: 10px;
+    padding-left: 10%;
+    opacity: 0.7;
+}
+
+.footer  .phone-number {
+    font-size: 17px;
+    position: absolute;
+    top: 30%;
+    padding-top: 10px;
+    padding-left: 10%;
+}
+
+.footer  .bank-servise {
+    font-size: 17px;
+    position: absolute;
+    top: 40%;
+    padding-top: 10px;
+    padding-left: 10%;
+    font-weight: 800;
+}
+
+.footer .sercurity {
+    font-size: 17px;
+    position: absolute;
+    top: 45%;
+    padding-top: 10px;
+    padding-left: 10%;
+}
+
+.footer .legal-info {
+    font-size: 17px;
+    position: absolute;
+    top: 60%;
+    padding-top: 10px;
+    padding-left: 10%
+}
+
+.footer .title {
+    font-size: 17px;
+    font-weight: 900;
+    opacity: 1;
+    position: absolute;
+    top: 80%;
+    padding-top: 10px;
+    padding-left: 10%
+}
+
+.footer .customer-service {
+    font-size: 20px;
+    font-weight: 800;
+    position: absolute;
+    top: 20%;
+    padding-top: 10px;
+    padding-left: 70%;
+    opacity: 1;
+}
+
+.footer .customer-service-number {
+    font-size: 17px;
+    position: absolute;
+    top: 30%;
+    padding-top: 10px;
+    padding-left: 70%;
+    opacity: 0.7;
+}
+
+.footer .customer-hour-use {
+    font-size: 17px;
+    position: absolute;
+    top: 45%;
+    padding-top: 10px;
+    padding-left: 70%;
+    opacity: 0.7;
+}
+
+.footer .customer-announcement {
+    font-size: 17px;
+    position: absolute;
+    top: 55%;
+    padding-top: 10px;
+    padding-left: 70%;
+    opacity: 0.7;
+}
+
+.footer img {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    filter: grayscale(100%);
+}
+
+.footer img:hover {
+    filter: grayscale(0%);
+}
+
+.footer .icon1 {
+    position: absolute;
+    padding-left: 70%;
+    top: 70%;
+}
+
+.footer .icon2 {
+    position: absolute;
+    left: 73%;
+    top: 70%;
+}
+
+.footer .icon3 {
+    position: absolute;
+    left: 76%;
+    top: 70%;
+}
+
+.footer .icon4 {
+    position: absolute;
+    left: 79%;
+    top: 70%;
+}
+
+.footer .icon5 {
+    position: absolute;
+    left: 82%;
+    top: 70%;
+}
