@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메뉴판 만들기</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        .a {
+            width: 300px;
+            height: 300px;
+            background: lightblue;
+            border-radius: 10px;
+            border: solid 5px skyblue;
+            position: relative;
+        }
+
+        .menu {
+            border: none;
+            border-radius: 30px;
+            width: 280px;
+            height: 40px;
+            position: absolute;
+            right: 50%;
+            transform: translateX(50%);
+            top: 10px;
+            background-color: red;
+            color: aliceblue;
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        .menu:hover {
+            background-color: blue;
+        }
+
+        .food {
+            position: absolute;
+            top: 75px;
+            width: 70px;
+            left: 10px;
+            border: solid 2px black;
+            border-radius: 3px;
+            font-weight: 600;
+            color: aliceblue;
+            background-color: green;
+        }
+
+        .food:hover {
+            color: yellow;
+        }
+
+        .box {
+            border-top: gray dotted 2px;
+            margin-top: 100px;
+            width: 280px;
+            margin-left: 10px;
+            position: relative;
+        }
+
+        i {
+            color: blue;
+        }
+
+        #pizza {
+            position: absolute;
+            top: 15px;
+        }
+
+        .b {
+            position: absolute;
+            font-size: 12px;
+            font-weight: 600;
+            top: 3px;
+            left: 23px;
+        }
+
+        #burger {
+            position: absolute;
+            top: 15px;
+            right: 120px;
+        }
+
+        .c {
+            position: absolute;
+            font-size: 12px;
+            font-weight: 600;
+            top: 3px;
+            right: 20px;
+        }
+
+        #cake {
+            position: absolute;
+            top: 50px;
+        }
+
+        .d {
+            position: absolute;
+            font-size: 12px;
+            font-weight: 600;
+            top: 37px;
+            left: 23px;
+        }
+
+        #hotdog {
+            position: absolute;
+            top: 50px;
+            right: 120px;
+        }
+
+        .e {
+            position: absolute;
+            font-size: 12px;
+            font-weight: 600;
+            top: 37px;
+            right: 20px;
+        }
+
+        .box2 {
+            border-top: gray dotted 2px;
+            margin-top: 110px;
+            width: 280px;
+            margin-left: 10px;
+            position: relative;
+        }
+
+        .drink {
+            position: absolute;
+            top: 185px;
+            width: 70px;
+            left: 10px;
+            border: solid 2px black;
+            border-radius: 3px;
+            font-weight: 600;
+            color: aliceblue;
+            background-color: green;
+        }
+
+        .drink:hover {
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="a">
+        <button class="menu">MENU</button>
+        <button class="food">Food</button>
+        <div class="box">
+            <i id="pizza" class="fa-solid fa-pizza-slice"></i> <p class="b">피자 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2500원</p>
+            <i id="burger" class="fa-solid fa-burger"></i> <p class="c">햄버거 &nbsp;&nbsp; 3000원</p>
+            <i id="cake" class="fa-solid fa-cheese"></i> <p class="d">치즈 케이크 &nbsp;&nbsp; 2500원</p>
+            <i id="hotdog" class="fa-solid fa-hotdog"></i> <p class="e">핫도그 &nbsp;&nbsp; 1000원</p>
+        </div> 
+        <button class="drink">Drink</button>
+        <div class="box2">
+            <i id="pizza" class="fa-solid fa-mug-saucer"></i> <p class="b">커피&nbsp;&nbsp;&nbsp; 2000원</p>
+            <i id="burger" class="fa-solid fa-wine-glass"></i> <p class="c">와인 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2900원</p>
+            <i id="cake" class="fa-solid fa-beer-mug-empty" style="position: absolute; left: 2px;"></i> <p class="d">맥주 &nbsp;&nbsp; 4000원</p>
+            <i id="hotdog" class="fa-solid fa-martini-glass-citrus"></i> <p class="e">칵테일 &nbsp;&nbsp; 3000원</p>
+        </div>
+    </div>
+</body>
+</html>
