@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type="checkbox"] {
+    opacity: 0;
+}
+
+.box-container {
+    display: flex;
+    gap: 15px;
+}
+
+.box-container label {
+    width: 80px;
+    height: 80px;
+    border: 2px solid #666;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    font-size: 22px;
+}
+
+#check1:checked ~ .box-container [for="check1"],
+#check2:checked ~ .box-container [for="check2"],
+#check3:checked ~ .box-container [for="check3"],
+#check4:checked ~ .box-container [for="check4"] {
+    background-color: gold;
+    border-color: #000;
+}
+
+@property --val1 { syntax: '<integer>'; inherits: true; initial-value: 0; }
+@property --val2 { syntax: '<integer>'; inherits: true; initial-value: 0; }
+@property --val3 { syntax: '<integer>'; inherits: true; initial-value: 0; }
+@property --val4 { syntax: '<integer>'; inherits: true; initial-value: 0; }
+
+#check1:checked ~ .sum { --val1: 10; }
+#check2:checked ~ .sum { --val2: 20; }
+#check3:checked ~ .sum { --val3: 30; }
+#check4:checked ~ .sum { --val4: -10; }
+
+.sum {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+}
+
+.sum::after {
+    counter-reset: total calc(var(--val1) + var(--val2) + var(--val3) + var(--val4));
+    content: "Sum: " counter(total);
+}
