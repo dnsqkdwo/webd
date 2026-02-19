@@ -3,45 +3,428 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>로딩 애니메이션</title>
+    <title>현대적 로딩 애니메이션</title>
     <style>
-        * { margin: 0; padding: 0; ; }
-        .loading {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: #000;
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            animation: fadeOut 3s forwards 3s;
+        }
+        
+        .loading {
+            position: fixed;
+            top: 0; 
+            left: 0;
+            width: 100%; 
+            height: 100%;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            animation: fadeOut 1s ease-in-out forwards 5s;
             z-index: 9999;
         }
-        .loader {
-            width: 50px;
-            height: 50px;
-            border: 5px solid #fff;
-            border-top: 5px solid transparent;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
+        
+        /* 메인 로더 컨테이너 */
+        .loader-container {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            margin-bottom: 30px;
         }
+        
+        /* 그라데이션 링 스피너 */
+        .ring-spinner {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 3px solid transparent;
+        }
+        
+        .ring-spinner:nth-child(1) {
+            border-top-color: #ff6b6b;
+            animation: spin 1.5s linear infinite;
+        }
+        
+        .ring-spinner:nth-child(2) {
+            border-right-color: #4ecdc4;
+            animation: spin 2s linear infinite reverse;
+            width: 90%;
+            height: 90%;
+            top: 5%;
+            left: 5%;
+        }
+        
+        .ring-spinner:nth-child(3) {
+            border-bottom-color: #45b7d1;
+            animation: spin 2.5s linear infinite;
+            width: 80%;
+            height: 80%;
+            top: 10%;
+            left: 10%;
+        }
+        
+        .ring-spinner:nth-child(4) {
+            border-left-color: #96ceb4;
+            animation: spin 3s linear infinite reverse;
+            width: 70%;
+            height: 70%;
+            top: 15%;
+            left: 15%;
+        }
+        
+        /* 중심 파티클 */
+        .center-particle {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle, #fff, #ff6b6b);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: pulse 1.5s ease-in-out infinite;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+        }
+        
+        /* 주변 입자들 */
+        .particle {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #fff;
+            border-radius: 50%;
+            opacity: 0;
+        }
+        
+        .particle:nth-child(1) {
+            top: -10px;
+            left: 50%;
+            animation: orbit1 2s linear infinite;
+        }
+        
+        .particle:nth-child(2) {
+            top: 50%;
+            right: -10px;
+            animation: orbit2 2.5s linear infinite;
+        }
+        
+        .particle:nth-child(3) {
+            bottom: -10px;
+            left: 50%;
+            animation: orbit3 3s linear infinite;
+        }
+        
+        .particle:nth-child(4) {
+            top: 50%;
+            left: -10px;
+            animation: orbit4 2.2s linear infinite;
+        }
+        
+        /* 로딩 텍스트 */
+        .loading-text {
+            color: #fff;
+            font-size: 24px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+        
+        .loading-dots {
+            display: inline-block;
+        }
+        
+        .loading-dots span {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: #fff;
+            border-radius: 50%;
+            margin: 0 2px;
+            opacity: 0.3;
+            animation: dotPulse 1.4s ease-in-out infinite;
+        }
+        
+        .loading-dots span:nth-child(1) { animation-delay: 0s; }
+        .loading-dots span:nth-child(2) { animation-delay: 0.2s; }
+        .loading-dots span:nth-child(3) { animation-delay: 0.4s; }
+        
+        /* 프로그레스 바 */
+        .progress-container {
+            width: 300px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+            background-size: 300% 100%;
+            animation: progressMove 2s ease-in-out forwards, gradientShift 3s ease-in-out infinite;
+            border-radius: 2px;
+        }
+        
+        /* 퍼센트 표시 */
+        .percentage {
+            color: #fff;
+            font-size: 14px;
+            margin-top: 10px;
+            opacity: 0.7;
+            font-weight: 500;
+        }
+        
+        /* 애니메이션 */
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+        
+        @keyframes pulse {
+            0%, 100% { 
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
+            50% { 
+                transform: translate(-50%, -50%) scale(1.5);
+                opacity: 0.7;
+            }
+        }
+        
+        @keyframes orbit1 {
+            0% { 
+                transform: rotate(0deg) translateX(40px) rotate(0deg);
+                opacity: 0;
+            }
+            50% { opacity: 1; }
+            100% { 
+                transform: rotate(360deg) translateX(40px) rotate(-360deg);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes orbit2 {
+            0% { 
+                transform: rotate(0deg) translateY(40px) rotate(0deg);
+                opacity: 0;
+            }
+            50% { opacity: 1; }
+            100% { 
+                transform: rotate(360deg) translateY(40px) rotate(-360deg);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes orbit3 {
+            0% { 
+                transform: rotate(0deg) translateX(40px) rotate(0deg);
+                opacity: 0;
+            }
+            50% { opacity: 1; }
+            100% { 
+                transform: rotate(-360deg) translateX(40px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes orbit4 {
+            0% { 
+                transform: rotate(0deg) translateY(40px) rotate(0deg);
+                opacity: 0;
+            }
+            50% { opacity: 1; }
+            100% { 
+                transform: rotate(-360deg) translateY(40px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes dotPulse {
+            0%, 60%, 100% {
+                opacity: 0.3;
+                transform: scale(1);
+            }
+            30% {
+                opacity: 1;
+                transform: scale(1.3);
+            }
+        }
+        
+        @keyframes progressMove {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
         @keyframes fadeOut {
-            to { opacity: 0; visibility: hidden; }
+            to { 
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+        
+        /* 메인 컨텐츠 스타일 */
+        .main-content {
+            text-align: center;
+            padding: 40px;
+            visibility: hidden;
+            animation: fadeIn 1s ease-in-out 5.5s forwards;
+        }
+        
+        .main-content h1 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .main-content p {
+            color: #666;
+            font-size: 1.1em;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        @keyframes fadeIn {
+            to {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+        
+        /* 반응형 디자인 */
+        @media (max-width: 768px) {
+            .loader-container {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .loading-text {
+                font-size: 20px;
+            }
+            
+            .progress-container {
+                width: 250px;
+            }
+            
+            .main-content h1 {
+                font-size: 2em;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .loading-text {
+                font-size: 18px;
+            }
+            
+            .progress-container {
+                width: 200px;
+            }
+            
+            .main-content {
+                padding: 20px;
+            }
+            
+            .main-content h1 {
+                font-size: 1.8em;
+            }
+            
+            .main-content p {
+                font-size: 1em;
+            }
         }
     </style>
 </head>
 <body>
-
     <div class="loading">
-        <div class="loader"></div>
+        <div class="loader-container">
+            <div class="ring-spinner"></div>
+            <div class="ring-spinner"></div>
+            <div class="ring-spinner"></div>
+            <div class="ring-spinner"></div>
+            <div class="center-particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+        
+        <div class="loading-text">
+            LOADING
+            <div class="loading-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        
+        <div class="progress-container">
+            <div class="progress-bar"></div>
+        </div>
+        
+        <div class="percentage">0%</div>
     </div>
 
-    <h1>메인 콘텐츠</h1>
+    <div class="main-content">
+        <h1>🎉 로딩 완료!</h1>
+        <p>현대적이고 인상적인 로딩 애니메이션이 성공적으로 표시되었습니다. 다양한 시각적 효과와 부드러운 애니메이션으로 사용자 경험을 향상시켰습니다.</p>
+    </div>
 
+    <script>
+        // 퍼센트 업데이트
+        let percentage = 0;
+        const percentageElement = document.querySelector('.percentage');
+        
+        const updatePercentage = () => {
+            if (percentage <= 100) {
+                percentageElement.textContent = percentage + '%';
+                percentage += 2;
+                setTimeout(updatePercentage, 80);
+            }
+        };
+        
+        // 시작
+        updatePercentage();
+        
+        // 마우스 이동 효과 (선택적 인터랙티브 기능)
+        document.addEventListener('mousemove', (e) => {
+            const loading = document.querySelector('.loading');
+            if (loading.style.opacity !== '0') {
+                const x = e.clientX / window.innerWidth;
+                const y = e.clientY / window.innerHeight;
+                
+                const centerX = 0.5;
+                const centerY = 0.5;
+                
+                const moveX = (x - centerX) * 20;
+                const moveY = (y - centerY) * 20;
+                
+                loading.style.transform = `translate(${moveX}px, ${moveY}px)`;
+            }
+        });
+    </script>
 </body>
 </html>
-
